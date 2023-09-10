@@ -30,9 +30,18 @@ android {
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
+//        sourceCompatibility = JavaVersion.VERSION_18
         targetCompatibility = JavaVersion.VERSION_11
+//        targetCompatibility = JavaVersion.VERSION_18
     }
     kotlin {
-        jvmToolchain(11)
+//        jvmToolchain(11)
+        jvmToolchain(18)
     }
+    packagingOptions {
+        resources {
+            excludes += "META-INF/versions/9/previous-compilation-data.bin"
+        }
+    }
+
 }
